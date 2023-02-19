@@ -1,6 +1,6 @@
 import { assert, expect, test } from "vitest";
 import { CONTACT_TYPE } from "../src/types";
-import { isValidContactNumber } from "../src/contactNumber";
+import { isValidContactNumber } from "../src/main";
 
 // https://en.wikipedia.org/wiki/Telephone_numbers_in_Afghanistan
 
@@ -72,9 +72,9 @@ const AFGHANISTAN_CONTACT_NUMBER = [
     isValid: true,
   },
 ];
-
-test("Math.sqrt()", () => {
-  for (const test of AFGHANISTAN_CONTACT_NUMBER) {
-    expect(isValidContactNumber(test.input, "AF")).toBe(test.isValid);
+test.each(AFGHANISTAN_CONTACT_NUMBER)(
+  "Afghanistan Test suite -> $input",
+  ({ input, output, isValid }) => {
+    expect(isValidContactNumber(input, "AF")).toBe(isValid);
   }
-});
+);

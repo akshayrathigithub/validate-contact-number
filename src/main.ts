@@ -12,7 +12,7 @@ function isPossibleContactNumber(number: string) {
   return allowedCharactersInContact.test(number);
 }
 
- function isValidMobileNumber(
+function isValidMobileNumber(
   number: string,
   countryISO: CountryCode | CountryCode[]
 ) {
@@ -28,7 +28,7 @@ function isPossibleContactNumber(number: string) {
   return getContactInfo(number, countryISO).valid;
 }
 
- function isValidLandlineNumber(
+function isValidLandlineNumber(
   number: string,
   countryISO: CountryCode | CountryCode[]
 ) {
@@ -44,7 +44,7 @@ function isPossibleContactNumber(number: string) {
   return getContactInfo(number, countryISO, true).valid;
 }
 
- function isValidContactNumber(
+function isValidContactNumber(
   number: string,
   countryISO: CountryCode | CountryCode[]
 ) {
@@ -94,7 +94,7 @@ function isValidNumber(number: string, regexString: string) {
   return false;
 }
 
- function validateContactNumber(
+function validateContactNumber(
   number: string,
   countryISO?: CountryCode | CountryCode[]
 ): ContactNumberInfo {
@@ -128,7 +128,7 @@ function isValidNumber(number: string, regexString: string) {
   return { valid: false };
 }
 
- function formatContactNumber(number: string, format: string) {
+function formatContactNumber(number: string, format: string) {
   const contactNumber = sanitizeNumber(number);
   const formatArr = format.split("");
   let formattedNumber = format;
@@ -150,5 +150,10 @@ function isValidNumber(number: string, regexString: string) {
     : formattedNumber;
 }
 
-
-export {formatContactNumber, validateContactNumber, isValidContactNumber,isValidLandlineNumber, isValidMobileNumber}
+export {
+  formatContactNumber,
+  validateContactNumber,
+  isValidContactNumber,
+  isValidLandlineNumber,
+  isValidMobileNumber,
+};

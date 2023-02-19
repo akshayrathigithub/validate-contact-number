@@ -1,25 +1,25 @@
 {
-  "name": "contact-number",
-  "private": true,
-  "version": "0.0.0",
+  "name": "validate-contact-number",
+  "private": false,
+  "version": "0.0.1",
   "exports": {
     ".": {
-      "import": "./dist/main.es.js",
-      "require": "./dist/main.cjs.js"
+      "import": "./dist/main.js",
+      "require": "./dist/main.js"
     }
   },
-  "main": "./dist/main.cjs.js",
-  "module": "./dist/main.es.js",
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
   "typings": "./dist/main.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "format": "prettier --write \"./src/**/*.{ts}\" \"./test/**/\"",
+    "format": "prettier --write \"./src/**/\" \"./test/**/\"",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -36,6 +36,6 @@
     "vitest": "^0.26.2"
   },
   "lint-staged": {
-    "**/*": "prettier --write"
+    "*.{ts,json,md}": "prettier --write \"./src/**/\" \"./test/**/\""
   }
 }
