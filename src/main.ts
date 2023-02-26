@@ -1,5 +1,5 @@
 import { contactInfo } from "./list";
-import { ContactNumberInfo, CONTACT_TYPE, CountryCode } from "./types";
+import { ContactNumberInfo, CONTACT_TYPE, CountryISO } from "./types";
 
 function sanitizeNumber(number: string) {
   const allowedCharacterRegex = /(\+|\d)+/g;
@@ -14,7 +14,7 @@ function isPossibleContactNumber(number: string) {
 
 function isValidMobileNumber(
   number: string,
-  countryISO: CountryCode | CountryCode[]
+  countryISO: CountryISO | CountryISO[]
 ) {
   if (Array.isArray(countryISO)) {
     for (const iso of countryISO) {
@@ -30,7 +30,7 @@ function isValidMobileNumber(
 
 function isValidLandlineNumber(
   number: string,
-  countryISO: CountryCode | CountryCode[]
+  countryISO: CountryISO | CountryISO[]
 ) {
   if (Array.isArray(countryISO)) {
     for (const iso of countryISO) {
@@ -46,7 +46,7 @@ function isValidLandlineNumber(
 
 function isValidContactNumber(
   number: string,
-  countryISO: CountryCode | CountryCode[]
+  countryISO: CountryISO | CountryISO[]
 ) {
   if (
     isValidMobileNumber(number, countryISO) ||
@@ -59,7 +59,7 @@ function isValidContactNumber(
 
 function getContactInfo(
   number: string,
-  countryISO: CountryCode,
+  countryISO: CountryISO,
   isLandline?: boolean
 ): ContactNumberInfo {
   const countryDetails = contactInfo[countryISO];
@@ -96,7 +96,7 @@ function isValidNumber(number: string, regexString: string) {
 
 function validateContactNumber(
   number: string,
-  countryISO?: CountryCode | CountryCode[]
+  countryISO?: CountryISO | CountryISO[]
 ): ContactNumberInfo {
   if (Array.isArray(countryISO)) {
     for (const iso of countryISO) {
@@ -116,7 +116,7 @@ function validateContactNumber(
     }
   } else {
     for (const key in contactInfo) {
-      const iso = key as CountryCode;
+      const iso = key as CountryISO;
       const validNumber = getContactInfo(number, iso).valid
         ? getContactInfo(number, iso)
         : getContactInfo(number, iso, true);

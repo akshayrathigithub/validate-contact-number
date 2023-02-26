@@ -1,4 +1,4 @@
-const countryCode = [
+const countryISO = [
   "AF",
   "AX",
   "AL",
@@ -242,7 +242,7 @@ const countryCode = [
   "ZM",
   "ZW",
 ] as const;
-export type CountryCode = typeof countryCode[number];
+export type CountryISO = (typeof countryISO)[number];
 export interface CountryConfig {
   name: string;
   dialCode: string;
@@ -257,7 +257,7 @@ export enum CONTACT_TYPE {
 
 export interface ContactNumberInfo {
   valid: boolean;
-  countryISO?: CountryCode;
+  countryISO?: CountryISO;
   contactNumber?: string;
   dialCode?: string;
   countryName?: string;

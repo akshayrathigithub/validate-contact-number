@@ -1,6 +1,6 @@
-import { CountryCode, CountryConfig } from "./types";
+import { CountryISO, CountryConfig } from "./types";
 
-export const contactInfo: { [key in CountryCode]: CountryConfig } = {
+export const contactInfo: { [key in CountryISO]: CountryConfig } = {
   AF: {
     name: "Afghanistan",
     dialCode: "+93",
