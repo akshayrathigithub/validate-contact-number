@@ -1,12 +1,16 @@
 {
   "name": "validate-contact-number",
   "private": false,
-  "version": "0.0.1",
+  "version": "alpha-1",
   "exports": {
     ".": {
       "import": "./dist/main.js",
       "require": "./dist/main.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akshayrathigithub/validate-contact-number.git"
   },
   "main": "./dist/main.js",
   "module": "./dist/main.js",
@@ -16,10 +20,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && tsc && vite build",
+    "build": "rm -rf dist && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "format": "prettier --write \"./src/**/\" \"./test/**/\"",
+    "format": "prettier --write",
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
@@ -36,6 +40,12 @@
     "vitest": "^0.26.2"
   },
   "lint-staged": {
-    "*.{ts,json,md}": "prettier --write \"./src/**/\" \"./test/**/\""
-  }
+    "*.{ts,json,md}": "prettier --write"
+  },
+  "author": "Akshay Rathi <https://akshayrathi.com> <akshayrathi.official@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akshayrathigithub/validate-contact-number/issues"
+  },
+  "homepage": "https://github.com/akshayrathigithub/validate-contact-number/blob/master/README.md"
 }
