@@ -1,4 +1,3 @@
-import { assert, expect, test } from "vitest";
 import { CONTACT_TYPE } from "../src/types";
 import { isValidContactNumber } from "../src/main";
 
