@@ -7,6 +7,9 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
+        library: {
+            type: 'commonjs'
+        }
     },
     resolve: {
         extensions: ['.ts',],
@@ -17,6 +20,11 @@ module.exports = {
                 test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.js?$/,
+                exclude: /(node_modules)/,
+                use: 'babel-loader',
             },
         ],
     },
