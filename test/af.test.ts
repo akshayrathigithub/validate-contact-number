@@ -14,7 +14,7 @@ const AFGHANISTAN_CONTACT_NUMBER = [
     input: "26-12-37865",
     output: "",
     type: CONTACT_TYPE.LANDLINE,
-    isValid: true,
+    isValid: false,
   },
   {
     input: "+93-30-1232583",
